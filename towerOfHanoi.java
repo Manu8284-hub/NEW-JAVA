@@ -1,0 +1,13 @@
+public class towerOfHanoi{
+    static void tower(int n, char src, char helper, char dest){
+        if(n==0){
+            return;
+        }
+        tower(n-1,src,helper,helper);
+        System.out.println("Move disk "+n+" from "+src+" to "+dest);
+        tower(n-1,helper,src,dest);
+    }
+    public static void main(String[] args){
+        tower(3,'A','B','C');
+    }
+}
